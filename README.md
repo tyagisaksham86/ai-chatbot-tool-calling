@@ -4,6 +4,56 @@ This project is a **production‑ready AI chatbot backend** built using **FastAP
 It intelligently understands user intent and automatically fetches **Sales** or **Admin** data from MongoDB without requiring the user to explicitly mention commands.
 
 ---
+## Architecture Explanation
+
+The system is built using a **containerized microservice-style architecture**.
+
+### Components Used
+
+- **FastAPI** – REST API framework
+- **OpenAI API** – Natural language understanding & reasoning
+- **MongoDB** – Database for sales and admin data
+- **Docker & Docker Compose** – Containerization and orchestration
+
+### Architecture Flow
+
+```
+User
+ |
+ v
+FastAPI (/chat endpoint)
+ |
+ v
+Agent Layer (Decision Logic)
+ |
+ v
+OpenAI Model
+ |
+ +------------------------+
+ |                        |
+No Tool Needed       Tool Needed
+ |                        |
+ v                        v
+Direct Reply        Backend Tool Execution
+                         |
+                         v
+                     MongoDB
+                         |
+                         v
+              Tool Result → OpenAI
+                         |
+                         v
+                  Final User Response
+```
+
+### Why This Architecture?
+
+- Clear separation of responsibilities
+- Prevents hallucination
+- Scalable and maintainable
+- Easy to deploy on any system using Docker
+
+---
 
 ## 🚀 Features
 
