@@ -88,7 +88,7 @@ docker compose up --build
 
 Services started:
 
-* FastAPI → `http://localhost:8000`
+* FastAPI → `http://127.0.0.1:8000/docs`
 * MongoDB → `mongodb://localhost:27017`
 
 ---
@@ -151,12 +151,6 @@ No hard‑coded commands required.
 
 ---
 
-## 💼 Interview‑Ready Explanation
-
-> "This system uses OpenAI function calling to dynamically select backend tools, fetch structured data from MongoDB, and maintain conversation state across sessions using persistent storage."
-
----
-
 ## 📌 Future Enhancements
 
 * Pagination for chat history
@@ -165,9 +159,3 @@ No hard‑coded commands required.
 * Streaming responses
 
 ---
-
-## 👨‍💻 Author
-
-**Saksham Tyagi**
-
-If this project helped you, consider starring the repo!
